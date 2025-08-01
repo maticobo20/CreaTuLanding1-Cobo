@@ -10,7 +10,7 @@ const NavBar = () => {
                     alt="Logo Melek" 
                     className="logo-image"
                 />
-                <h1 className="logo-title">MELËK</h1>
+                <h1 className="logo-title">MËLEꓘ</h1>
             </div>
             
             <div className="nav-menu">

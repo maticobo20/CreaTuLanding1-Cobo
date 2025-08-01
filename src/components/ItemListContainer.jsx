@@ -9,21 +9,33 @@ const ItemListContainer = ({ mensaje }) => {
             
             <div className="products-grid">
                 <div className="product-card">
-                    <div className="product-icon">👕</div>
-                    <h3 className="product-title">Remeras</h3>
-                    <p className="product-description">Remeras de todos los colores y talles</p>
+                    <img 
+                        src="/human.png" 
+                        alt="Remera Human" 
+                        className="product-image"
+                    />
+                    <h3 className="product-title">Remera Human Made</h3>
+                    <p className="product-description">Remera oversize <br/> 100% algodón <br/> Colores: Blanco y Negro</p>
                 </div>
                 
                 <div className="product-card">
-                    <div className="product-icon">👖</div>
-                    <h3 className="product-title">Pantalones</h3>
-                    <p className="product-description">Jeans, joggers y pantalones casuales</p>
+                    <img 
+                        src="/11.png" 
+                        alt="Remera 11" 
+                        className="product-image"
+                    />
+                    <h3 className="product-title">Remera 11:11</h3>
+                    <p className="product-description">Remera oversize <br/> 100% algodón <br/> Colores: Blanco y Negro</p>
                 </div>
                 
                 <div className="product-card">
-                    <div className="product-icon">🧥</div>
-                    <h3 className="product-title">Buzos</h3>
-                    <p className="product-description">Buzos con capucha y sin capucha</p>
+                    <img 
+                        src="/pantera.png" 
+                        alt="Remera Pantera" 
+                        className="product-image"
+                    />
+                    <h3 className="product-title">Remera Born Wild</h3>
+                    <p className="product-description">Remera oversize <br /> 100% algodón <br /> Colores: Blanco y Negro</p>
                 </div>
             </div>
         </div>
