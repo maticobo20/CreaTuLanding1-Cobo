@@ -14,17 +14,11 @@ const NavBar = () => {
             </div>
             
             <div className="nav-menu">
-                <button className="nav-button">
-                    Inicio
-                </button>
+                <a className="nav-button">Inicio</a>
                 
-                <button className="nav-button">
-                    Productos
-                </button>
+                <a className="nav-button">Productos</a>
                 
-                <button className="nav-button">
-                    Contacto
-                </button>
+                <a className="nav-button">Contacto</a>
                 
                 <CartWidget />
             </div>
