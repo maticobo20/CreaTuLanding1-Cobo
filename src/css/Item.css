@@ -1,0 +1,87 @@
+.item-card {
+  background-color: #fff;
+  padding: 24px 16px;
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid #ececec;
+  margin: 0 auto;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+  border-color: #d1d1d1;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+}
+
+.item-name {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #1a8917;
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.item-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #222 60%, #444 100%);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s;
+  margin-top: auto;
+}
+
+.item-btn:hover {
+  background: linear-gradient(90deg, #444 60%, #222 100%);
+  transform: scale(1.05);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
+
+.item-btn-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.comprar-btn {
+  margin-top: 12px;
+  background: linear-gradient(90deg, #1a8917 60%, #27ae60 100%);
+}
+
+.comprar-btn:hover {
+  background: linear-gradient(90deg, #27ae60 60%, #1a8917 100%);
+}
