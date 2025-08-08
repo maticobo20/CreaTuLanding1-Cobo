@@ -1,10 +1,18 @@
 import React from 'react'
 import Item from './Item'
 
-const ItemList = (data) => {
+const ItemList = ({ data, onAddToCart }) => {
     return (
-        <div>
-            {data.map((prod)=> <Item key={prod.id} prod={prod}/>)}
+        <div className="products-grid">
+            {data.map((prod) => (
+                <Item
+                    key={prod.id}
+                    name={prod.name}
+                    price={prod.price}
+                    img={prod.img}
+                    onAddToCart={onAddToCart}
+                />
+            ))}
         </div>
     )
 }

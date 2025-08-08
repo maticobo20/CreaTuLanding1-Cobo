@@ -6,7 +6,7 @@ const productos = [
         description: 'Remera oversize <br/> 100% algodón <br/> Colores: Blanco y Negro',
         category: 'remeras',
         stock: 5,
-        img: '../public/human.png',
+        img: '/human.png',
         
     },
     {
@@ -31,9 +31,9 @@ const productos = [
     }
 ]
 
-export const getProductos = () => {
+export const getProducts = () => {
     let error = true
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             
             resolve(productos);

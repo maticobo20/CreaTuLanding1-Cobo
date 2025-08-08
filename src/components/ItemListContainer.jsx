@@ -1,26 +1,25 @@
-import { getProducts } from '../mock/AsyncMock'
-import '../css/ItemListContainer.css'
+import React, { useState, useEffect } from 'react';
+import { getProducts } from '../mock/AsyncMock';
+import ItemList from './ItemList';
+import '../css/ItemListContainer.css';
 
-const ItemListContainer = ({ mensaje }) => {
+const ItemListContainer = ({ mensaje, onAddToCart }) => {
+    const [data, setData] = useState([]);
 
-    const [data, setData] = useState([])
-
-    useEffect(() =>{
+    useEffect(() => {
         getProducts()
-        .then((res)=> console.log(res, 'res'))
-        .catch((error) => console.error(error))
-
-    },[])
+            .then((res) => setData(res))
+            .catch((error) => console.error(error));
+    }, []);
 
     return (
         <div className="item-list-container">
-            <h1 className="title">
-                {mensaje}
-            </h1>
-            <ItemList data={data}/>
-           
+            <h1 className="title">{mensaje}</h1>
+            <div className="products-grid">
+                <ItemList data={data} onAddToCart={onAddToCart} />
+            </div>
         </div>
     );
 };
 
-export default ItemListContainer; 
+export default ItemListContainer;

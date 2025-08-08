@@ -1,7 +1,7 @@
 import CartWidget from './CartWidget';
 import '../css/NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({cantidad}) => {
     return (
         <nav className="navbar">
             <div className="logo-container">
@@ -29,7 +29,7 @@ const NavBar = () => {
                 
                 <a className="nav-button">Contacto</a>
                 
-                <CartWidget cantidad={0} />
+                <CartWidget cantidad={cantidad} />
             </div>
         </nav>
     );
