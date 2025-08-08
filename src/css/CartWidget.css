@@ -1,0 +1,32 @@
+.cart-widget {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #555;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.cart-widget:hover {
+  background-color: #666;
+}
+
+.cart-icon {
+  font-size: 18px;
+}
+
+.cart-count {
+  background-color: #ff4444;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 20px;
+} 
