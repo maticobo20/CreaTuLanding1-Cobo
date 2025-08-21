@@ -1,6 +1,7 @@
 import React, { useState } from 'react'; 
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import { ItemDetailContainer } from './components/ItemDetailContainer'
 import CartWidget from './components/CartWidget'
 import './App.css'
 
