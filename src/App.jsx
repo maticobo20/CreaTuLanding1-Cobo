@@ -1,22 +1,26 @@
-import React, { useState } from 'react'; 
+import React from 'react'; 
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import { ItemDetailContainer } from './components/ItemDetailContainer'
-import CartWidget from './components/CartWidget'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css'
 
 function App() {
-  const [cartCount, setCartCount] = useState(0);
-
-  const handleAddToCart = () => {
-    setCartCount(cartCount + 1);
-  };
-
   return (
-    <div>
-      <NavBar cantidad={cartCount} />
-      <ItemListContainer mensaje="¡MËLEꓘ Te da la bienvenida!" onAddToCart={handleAddToCart} />
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <ItemListContainer mensaje="¡MËLEꓘ Te da la bienvenida!" />
+          </>
+        } />
+        <Route path="/productos" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
+        <Route path="/category/:id" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
+        <Route path="/categoria/:id" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
+        <Route path="/item/:id" element={<ItemDetailContainer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

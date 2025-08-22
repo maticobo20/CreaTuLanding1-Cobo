@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getItem } from "../mock/AsyncMock";
 import ItemDetail from "./ItemDetail";
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
+  const { id } = useParams();
 
   useEffect(() => {
-    getItem().then((data) => {
+    getItem(id).then((data) => {
       setItem(data);
     });
-  }, []);
+  }, [id]);
 
   if (!item) {
     return <p>Cargando detalles del producto...</p>;

@@ -7,9 +7,11 @@ const ItemList = ({ data, onAddToCart }) => {
             {data.map((prod) => (
                 <Item
                     key={prod.id}
+                    id={prod.id}
                     name={prod.name}
                     price={prod.price}
                     img={prod.img}
+                    stock={prod.stock}
                     onAddToCart={onAddToCart}
                 />
             ))}
