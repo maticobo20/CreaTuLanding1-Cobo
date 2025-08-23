@@ -17,7 +17,7 @@ function App() {
         } />
         <Route path="/productos" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
         <Route path="/category/:id" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
-        <Route path="/categoria/:id" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
+        <Route path="/category/:id" element={<ItemListContainer mensaje="¡MËLEꓘ!"/>} />
         <Route path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
     </BrowserRouter>

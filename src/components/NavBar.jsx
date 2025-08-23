@@ -33,10 +33,10 @@ const NavBar = ({cantidad}) => {
                     <button className="nav-button" type="button">Productos</button>
                     <div className="dropdown-content">
                         <NavLink to="/productos" className="dropdown-item">Todos</NavLink>
-                        <NavLink to="/categoria/remeras" className="dropdown-item">Remeras</NavLink>
-                        <NavLink to="/categoria/buzos" className="dropdown-item">Buzos</NavLink>
-                        <NavLink to="/categoria/pantalones" className="dropdown-item">Pantalones</NavLink>
-                        <NavLink to="/categoria/camperas" className="dropdown-item">Camperas</NavLink>
+                        <NavLink to="/category/remeras" className="dropdown-item">Remeras</NavLink>
+                        <NavLink to="/category/buzos" className="dropdown-item">Buzos</NavLink>
+                        <NavLink to="/category/pantalones" className="dropdown-item">Pantalones</NavLink>
+                        <NavLink to="/category/camperas" className="dropdown-item">Camperas</NavLink>
                     </div>
                 </div>
                 <NavLink to="/contacto" className="nav-button">Contacto</NavLink>
