@@ -34,7 +34,7 @@ const NavBar = ({cantidad}) => {
                     <div className="dropdown-content">
                         <NavLink to="/productos" className="dropdown-item">Todos</NavLink>
                         <NavLink to="/categoria/remeras" className="dropdown-item">Remeras</NavLink>
-                        <NavLink to="/categoria/accesorios" className="dropdown-item">Accesorios</NavLink>
+                        <NavLink to="/categoria/buzos" className="dropdown-item">Buzos</NavLink>
                         <NavLink to="/categoria/pantalones" className="dropdown-item">Pantalones</NavLink>
                         <NavLink to="/categoria/camperas" className="dropdown-item">Camperas</NavLink>
                     </div>
