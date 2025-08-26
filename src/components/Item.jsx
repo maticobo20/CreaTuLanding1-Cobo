@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 
 
 const Item = ({ id, name, price, img, stock, onAddToCart }) => {
+    const handleBuy = () => {
+        const item = { id, name, price, img, stock };
+        if (onAddToCart) onAddToCart(item, 1);
+    };
     return (
         <div className="item-card">
             <img src={img} alt={name} className="product-image" />
@@ -11,7 +15,7 @@ const Item = ({ id, name, price, img, stock, onAddToCart }) => {
             <p className="item-price">${price}</p>
             <p className="item-stock">Stock disponible: {stock}</p>
             <div className="item-btn-group">
-                <button className="item-btn comprar-btn" onClick={onAddToCart}>Comprar</button>
+                <button className="item-btn comprar-btn" onClick={handleBuy}>Comprar</button>
                 <Link to={`/item/${id}`} className="item-btn">Ver más</Link>
             </div>
         </div>

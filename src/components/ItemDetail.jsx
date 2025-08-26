@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ItemCount from './ItemCount';
 
 
-const ItemDetail = ({ item }) => {
+const ItemDetail = ({ item, handleAddToCart }) => {
+  const [added, setAdded] = useState(false);
+
+  const onAdd = (quantity) => {
+    handleAddToCart(item, quantity);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
   return (
     <div className="item-detail-horizontal">
       <img src={item.img} alt={item.name} className="item-detail-img" />
@@ -10,7 +19,12 @@ const ItemDetail = ({ item }) => {
         <p>{item.description}</p>
         <span className="item-detail-price">${item.price}</span>
         <p className="item-stock">Stock disponible: {item.stock}</p>
-        <button className="add-cart-btn">Agregar al carrito</button>
+        <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
+        {added && (
+          <div className="add-confirmation">
+            ¡Producto agregado al carrito!
+          </div>
+        )}
       </div>
     </div>
   );

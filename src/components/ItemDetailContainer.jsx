@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom";
 import { getItem } from "../mock/AsyncMock";
 import ItemDetail from "./ItemDetail";
 
-export const ItemDetailContainer = () => {
+
+export const ItemDetailContainer = ({ handleAddToCart }) => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
 
@@ -17,7 +18,7 @@ export const ItemDetailContainer = () => {
     return <p>Cargando detalles del producto...</p>;
   }
 
-  return <ItemDetail item={item} />;
+  return <ItemDetail item={item} handleAddToCart={handleAddToCart} />;
 };
 
 export default ItemDetailContainer;
