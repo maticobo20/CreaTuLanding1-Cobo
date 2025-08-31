@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getItem } from "../mock/AsyncMock";
 import ItemDetail from "./ItemDetail";
+import { useCart } from '../context/CartContext';
 
 
-export const ItemDetailContainer = ({ handleAddToCart }) => {
+export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
   const { id } = useParams();
+  const { addItem } = useCart();
 
   useEffect(() => {
     getItem(id).then((data) => {
@@ -18,7 +20,7 @@ export const ItemDetailContainer = ({ handleAddToCart }) => {
     return <p>Cargando detalles del producto...</p>;
   }
 
-  return <ItemDetail item={item} handleAddToCart={handleAddToCart} />;
+  return <ItemDetail item={item} handleAddToCart={addItem} />;
 };
 
 export default ItemDetailContainer;

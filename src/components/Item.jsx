@@ -1,12 +1,12 @@
 import React from 'react';
 import '../css/Item.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Item = ({ id, name, price, img, stock, onAddToCart }) => {
+    const navigate = useNavigate();
     const handleBuy = () => {
-        const item = { id, name, price, img, stock };
-        if (onAddToCart) onAddToCart(item, 1);
+        navigate(`/item/${id}`);
     };
     return (
         <div className="item-card">

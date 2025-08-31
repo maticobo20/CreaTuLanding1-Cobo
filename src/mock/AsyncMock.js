@@ -1,3 +1,12 @@
+// Permite actualizar el stock de un producto por id
+export const updateStock = (id, quantity) => {
+  const prod = productos.find(p => p.id === id);
+  if (prod && prod.stock >= quantity) {
+    prod.stock -= quantity;
+    return true;
+  }
+  return false;
+};
 const productos = [
     {
         id: '01',

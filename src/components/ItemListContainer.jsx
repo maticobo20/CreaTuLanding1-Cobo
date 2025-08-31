@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { getProducts } from '../mock/AsyncMock';
 import ItemList from './ItemList';
 import '../css/ItemListContainer.css';
+import { useCart } from '../context/CartContext';
 
-const ItemListContainer = ({ mensaje, onAddToCart }) => {
+const ItemListContainer = ({ mensaje }) => {
     const [data, setData] = useState([]);
     const { id } = useParams();
+    const { addToCart } = useCart();
 
     useEffect(() => {
         getProducts()
@@ -24,7 +26,7 @@ const ItemListContainer = ({ mensaje, onAddToCart }) => {
         <div className="item-list-container">
             <h1 className="title">{mensaje}</h1>
             <div className="products-grid">
-                <ItemList data={data} onAddToCart={onAddToCart} />
+                <ItemList data={data} onAddToCart={addToCart} />
             </div>
         </div>
     );

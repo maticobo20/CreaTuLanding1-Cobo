@@ -4,11 +4,11 @@ import '../css/ItemCount.css';
 const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
   const [count, setCount] = useState(initial);
 
-  const handleDecrement = () => {
+  const restar = () => {
     if (count > initial) setCount(count - 1);
   };
 
-  const handleIncrement = () => {
+  const sumar = () => {
     if (count < stock) setCount(count + 1);
   };
 
@@ -19,9 +19,9 @@ const ItemCount = ({ initial = 1, stock = 10, onAdd }) => {
   return (
     <div className="item-count-container">
       <div className="item-count-controls">
-        <button onClick={handleDecrement} disabled={count <= initial}>-</button>
+        <button onClick={restar} disabled={count <= initial}>-</button>
         <span>{count}</span>
-        <button onClick={handleIncrement} disabled={count >= stock}>+</button>
+        <button onClick={sumar} disabled={count >= stock}>+</button>
       </div>
       <button className="item-count-add" onClick={handleAdd} disabled={stock === 0}>
         Agregar al carrito
