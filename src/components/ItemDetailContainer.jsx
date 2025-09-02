@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getItem } from "../mock/AsyncMock";
 import ItemDetail from "./ItemDetail";
+import LoaderComponent from "./LoaderComponent";
 import { useCart } from '../context/CartContext';
 
 
@@ -17,7 +18,7 @@ export const ItemDetailContainer = () => {
   }, [id]);
 
   if (!item) {
-    return <p>Cargando detalles del producto...</p>;
+    return <LoaderComponent />;
   }
 
   return <ItemDetail item={item} handleAddToCart={addItem} />;
