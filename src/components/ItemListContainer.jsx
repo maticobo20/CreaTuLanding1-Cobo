@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProducts } from '../mock/AsyncMock';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../service/firebase';
 import ItemList from './ItemList';
 import LoaderComponent from './LoaderComponent';
 import '../css/ItemListContainer.css';
@@ -14,13 +15,17 @@ const ItemListContainer = ({ mensaje }) => {
     const [loading, setLoading] = useState(true);
     useEffect(() => {
         setLoading(true);
-        getProducts()
-            .then((res) => {
-                if (id && id !== 'todos') {
-                    setData(res.filter(producto => producto.category === id));
-                } else {
-                    setData(res);
-                }
+        const productsRef = collection(db, 'productos');
+        let productsQuery;
+        if (id && id !== 'todos') {
+            productsQuery = query(productsRef, where('category', '==', id));
+        } else {
+            productsQuery = productsRef;
+        }
+        getDocs(productsQuery)
+            .then((snapshot) => {
+                const productos = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                setData(productos);
             })
             .catch((error) => console.error(error))
             .finally(() => setLoading(false));
