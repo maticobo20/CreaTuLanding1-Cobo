@@ -1,38 +1,21 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-import { createOrder } from '../service/createOrder';
+// import { createOrder } from '../service/createOrder';
+import Checkout from './Checkout';
 import '../css/Cart.css';
 
 const Cart = () => {
   const { cart, removeItem, clear, getItemTotal } = useCart();
   const total = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  const [orderId, setOrderId] = useState(null);
+  const [showCheckout, setShowCheckout] = useState(false);
 
-  const handleFinishPurchase = async () => {
-    const buyer = { name: 'Nombre', phone: '123456789', email: 'email@email.com' };
-    const items = cart.map(item => ({
-      id: item.id,
-      title: item.name,
-      quantity: item.quantity,
-      price: item.price
-    }));
-    const orderData = {
-      buyer,
-      items,
-      date: new Date(),
-      total
-    };
-    try {
-      const id = await createOrder(orderData);
-      setOrderId(id);
-      clear();
-    } catch (error) {
-      alert('Error al crear la orden');
-    }
+  const handleFinishPurchase = () => {
+    setShowCheckout(true);
   };
 
-  if (cart.length === 0) {
+
+  if (cart.length === 0 && !showCheckout) {
     return (
       <div className="cart-empty">
         <h2>Tu carrito está vacío</h2>
@@ -44,11 +27,8 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <h2>Carrito de compras</h2>
-      {orderId ? (
-        <div className="order-success">
-          <h3>¡Compra realizada con éxito!</h3>
-          <p>Tu código de orden es: <strong>{orderId}</strong></p>
-        </div>
+      {showCheckout ? (
+        <Checkout closeCheckout={() => setShowCheckout(false)} />
       ) : (
         <>
           <ul className="cart-list">

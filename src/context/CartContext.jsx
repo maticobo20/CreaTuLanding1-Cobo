@@ -21,7 +21,6 @@ export const CartProvider = ({ children }) => {
       const stockActual = itemSnap.data().stock;
       if (stockActual < quantity) {
         alert('No hay suficiente stock disponible');
-        return;
       }
       await updateDoc(itemRef, { stock: stockActual - quantity });
       setCart(prevCart => {
