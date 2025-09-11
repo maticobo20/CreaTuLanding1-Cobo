@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
-// import { createOrder } from '../service/createOrder';
 import Checkout from './Checkout';
 import '../css/Cart.css';
 
@@ -13,7 +12,6 @@ const Cart = () => {
   const handleFinishPurchase = () => {
     setShowCheckout(true);
   };
-
 
   if (cart.length === 0 && !showCheckout) {
     return (

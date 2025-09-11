@@ -39,7 +39,7 @@ const NavBar = () => {
                         <NavLink to="/category/camperas" className="dropdown-item">Camperas</NavLink>
                     </div>
                 </div>
-                <NavLink to="/contacto" className="nav-button">Contacto</NavLink>
+                <NavLink to="/nosotros" className="nav-button">Nosotros</NavLink>
                 <CartWidget cantidad={totalItems} />
             </div>
         </nav>

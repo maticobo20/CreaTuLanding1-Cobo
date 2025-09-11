@@ -8,7 +8,6 @@ const ItemDetail = ({ item, handleAddToCart }) => {
   const navigate = useNavigate();
 
   const onAdd = (quantity) => {
-    // Creamos el objeto con la cantidad seleccionada
     const itemToAdd = { ...item };
     handleAddToCart(itemToAdd, quantity);
     setAdded(true);
