@@ -36,23 +36,6 @@ const Item = ({ id, name, price, img, stock, onAddToCart, category }) => {
             <h2 className="item-name">{name}</h2>
             <p className="item-price">${price}</p>
             <p className="item-stock">Stock disponible: {stock}</p>
-            {talles.length > 0 && (
-                <div className="talle-btn-row">
-                    <label htmlFor={`talle-select-${id}`} className="talle-label">Talle:</label>
-                    <select
-                        id={`talle-select-${id}`}
-                        className="talle-select"
-                        value={selectedTalle}
-                        onChange={e => setSelectedTalle(e.target.value)}
-                    >
-                        <option value="">Selecciona un talle</option>
-                        {talles.map(t => (
-                            <option key={t} value={t}>{t}</option>
-                        ))}
-                    </select>
-                    <button className="item-btn add-cart-btn" onClick={handleAddToCart}>Agregar al carrito</button>
-                </div>
-            )}
             <div className="item-btn-group">
                 <button className="item-btn comprar-btn" onClick={handleBuy}>Comprar</button>
                 <Link to={`/item/${id}`} className="item-btn">Ver más</Link>

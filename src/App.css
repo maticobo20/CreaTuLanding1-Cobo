@@ -157,35 +157,42 @@ body {
     margin-top: 1rem;
 }
 
-/* Botones de talle en el detalle */
 .talle-btns-row {
-    margin: 1.5rem 0 1rem 0;
+    margin: 2rem 0 1.2rem 0;
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 1rem;
 }
 .talle-label {
-    font-weight: 600;
-    margin-right: 0.7rem;
-    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 1.2rem;
+    font-size: 1.1rem;
     color: #eaeaea;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 .talle-btn {
-    padding: 8px 18px;
-    border-radius: 6px;
-    border: 1px solid #222;
-    background: #222;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #181818;
     color: #fff;
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: 2px solid #444;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    outline: none;
 }
 .talle-btn.selected {
     background: #fff;
-    color: #222;
+    color: #181818;
     border-color: #3182ce;
+    box-shadow: 0 0 0 2px #3182ce33;
 }
 .talle-btn:hover {
     background: #3182ce;
