@@ -34,14 +34,7 @@ const ItemDetail = ({ item, handleAddToCart }) => {
       <img src={item.img} alt={item.name} className="item-detail-img" />
       <div className="item-detail-info">
         <h2>{item.name}</h2>
-        <p>
-          {item.description.split('\n').map((line, i) => (
-            <React.Fragment key={i}>
-              {line}
-              <br />
-            </React.Fragment>
-          ))}
-        </p>
+  <p>{item.description}</p>
         <span className="item-detail-price">${item.price}</span>
         <p className="item-stock">Stock disponible: {item.stock}</p>
         {talles.length > 0 && (
