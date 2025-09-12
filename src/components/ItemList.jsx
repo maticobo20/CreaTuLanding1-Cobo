@@ -12,6 +12,7 @@ const ItemList = ({ data, onAddToCart }) => {
                     price={prod.price}
                     img={prod.img}
                     stock={prod.stock}
+                    category={prod.category}
                     onAddToCart={onAddToCart}
                 />
             ))}

@@ -24,10 +24,12 @@ export const CartProvider = ({ children }) => {
       }
       await updateDoc(itemRef, { stock: stockActual - quantity });
       setCart(prevCart => {
-        const existing = prevCart.find(prod => prod.id === item.id);
+        const existing = prevCart.find(prod => prod.id === item.id && prod.talle === item.talle);
         if (existing) {
           return prevCart.map(prod =>
-            prod.id === item.id ? { ...prod, quantity: prod.quantity + quantity } : prod
+            prod.id === item.id && prod.talle === item.talle
+              ? { ...prod, quantity: prod.quantity + quantity }
+              : prod
           );
         } else {
           return [...prevCart, { ...item, quantity }];

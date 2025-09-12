@@ -1,14 +1,23 @@
 .item-detail-btn-group {
 	display: flex;
 	gap: 1rem;
+}
+
+.talle-selector {
 	margin-top: 1.5rem;
 }
-.add-cart-btn {
+ .add-cart-btn {
 	background: #38a169;
 	color: #fff;
+}
+
+.talle-selector label {
 	border: none;
 	border-radius: 6px;
 	padding: 0.5rem 1.2rem;
+}
+
+.talle-selector select {
 	cursor: pointer;
 	font-size: 1rem;
 	transition: background 0.2s;
@@ -25,6 +34,10 @@
 	margin: 2rem auto;
 	align-items: center;
 	gap: 2rem;
+}
+
+.talle-selector select:focus {
+	border-color: #3182ce;
 }
 .item-detail-img {
 	width: 220px;
