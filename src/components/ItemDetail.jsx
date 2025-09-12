@@ -6,6 +6,12 @@ const getTalles = (category) => {
   if (category === 'remeras' || category === 'pantalones') {
     return ['S', 'M', 'L'];
   }
+  if (category === 'remeras' || category === 'buzos') {
+    return ['S', 'M', 'L'];
+  }
+  if (category === 'pantalones') {
+    return ['S', 'M', 'L'];
+  }
   if (category === 'camperas') {
     return ['XL'];
   }
