@@ -114,10 +114,6 @@ body {
     display: flex;
     gap: 0.5rem;
 }
-
-.item-detail-info p {
-	white-space: pre-line;
-}
 .item-btn {
     background: #3182ce;
     color: #fff;
