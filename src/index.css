@@ -21,26 +21,22 @@ code {
     monospace;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Better button defaults */
 button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
 }
 
-/* Better focus styles for accessibility */
 button:focus,
 a:focus {
   outline: 2px solid #667eea;
   outline-offset: 2px;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -58,25 +54,21 @@ a:focus {
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
 }
 
-/* Selection color */
 ::selection {
   background: rgba(102, 126, 234, 0.3);
   color: #333;
 }
 
-/* Responsive images */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Better text rendering */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
 }
 
-/* Animation utilities */
 @keyframes fadeIn {
   from {
     opacity: 0;

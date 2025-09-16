@@ -52,7 +52,6 @@
   transition: background 0.2s;
 }
 
-/* Estilos para el dropdown de categorías */
 .categories-dropdown {
   position: relative;
   display: inline-block;
